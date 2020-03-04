@@ -1,0 +1,111 @@
+R Data Interfaces.
+
+R Language allows you to write data to and read data from different data sources. 
+
+E.g.:
+
+1. CSV Files
+2. Excel Files
+3. XML Files
+4. JSON Files
+5. Web
+6. Databases etc.
+
+
+
+1. Working with CSV Files.
+
+#Writing Data to CSV Files
+
+write.csv(data, filename)
+
+e.g.
+
+student=data.frame(
+	id=1:5,
+	name=c('Ankit','Anil','Sunil','Pankaj','Gaurav'),
+	course=c('Java','PHP','HTML','Excel','Python'),
+	fees=c(16000,18000,10000,10000,16000)
+)
+
+write.csv(student,"student.csv")
+
+
+#Appending Data to an existing file
+
+write.csv(student,"student.csv", append=TRUE)
+
+#Reading Data from CSV Files
+
+read.csv(filename)
+
+e.g.
+
+student=read.csv("student.csv")
+
+print(student)
+
+
+
+2. Working With Excel Documents
+
+#Install 'excel' package using following command:
+
+install.packages('xlsx')
+
+
+#Reading Data from Excel
+
+read.xlsx(filename, sheetIndex)
+
+e.g.
+
+students=read.xlsx("students.xlsx", sheetIndex=1)
+
+#Writing 
+
+write.xlsx(data, filename, sheetName="Sheet1", append=FALSE)
+
+e.g.
+
+students=data.frame(
+  id=1:5,
+  name=c('Ankit','Anil','Sunil','Pankaj','Gaurav'),
+)
+
+courses=data.frame(
+  courseid=1:5,
+  coursename=c('PHP','Java','Python','HTML','MIS')
+)
+
+write.xlsx(students,"d:/r/students.xlsx", sheetName="Students", append=TRUE)
+
+write.xlsx(courses,"d:/r/students.xlsx", sheetName="Courses", append=TRUE)
+
+
+
+
+#Working With DBMS
+
+#Install 'RMySQL' library using following command:
+
+install.packages('RMySQL')
+
+
+
+#Step 1 : Establish a Connection
+
+con = dbConnect(MySQL(), host="localhost", user="root", password="", dbname="dummy")
+
+
+
+#Step 2 : Executing SQL Commands
+
+#Inserting Record(s)
+
+dbSendQuery(con, "INSERT INTO STUDENT VALUES(10,'Hardik','DS',50000)")
+
+#Fetching Record(s)
+
+result=dbSendQuery(con, "SELECT * FROM STUDENT")
+students=fetch(result, n=No_OF_Records)

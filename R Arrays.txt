@@ -1,0 +1,15 @@
+Arrays
+
+Arrays are the R data objects which can store data in more than 2 dimensions. An array can be created by using the following function:
+
+array(data, dim=value)
+
+
+e.g.
+
+arr=array(1:9, dim=c(3,3))
+print(arr)
+arr=array(1:5, dim=c(5))
+print(arr)
+arr=array(1:8, dim=c(2,2,2))
+print(arr)

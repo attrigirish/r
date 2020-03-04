@@ -1,0 +1,128 @@
+Data Frames
+
+A data frame is a table or two-dimensional array-like structure in which each column contains values of one variable and each row contains one set of values from each column.
+
+Following are the characteristics of a data-frame:
+	- The column names should be non-empty.
+	- The row names should be unique.
+	- The data stored in a dataframe can be numeric, factor or character type.
+	- Each column should contain the same number of items.
+
+
+
+
+data.frame(
+	column_name = values,
+	column_name = values,
+)
+
+e.g.
+
+
+#Defining Row Names in a Data Frame
+
+years=c(2015,2016,2017,2018)
+
+pitampura=c(5460,2346,4567,3457)
+
+rohini=c(6300,6540,2360,5400)
+
+sales=data.frame(
+	'Pitampura'=pitampura,
+	'Rohini'=rohini
+)
+
+row_names = c(2015,2016,2017,2018)
+
+print(sales)
+
+
+
+Students Data Frames
+
+students=data.frame(
+	id = 1:5,
+	names = c("Girish","Ankit","Pankaj","Gaurav","Karan"),
+	course = c("Java","Python","PHP","Java","HTML"),
+	fees = c(16000.0, 16000.0, 20000.0, 16000.0, 14000.0),
+	doa = c('2019-10-09','2019-10-13','2019-10-20','2019-11-04','2019-11-03'),
+	stringAsFactors=FALSE
+)
+
+print(students)
+
+
+
+* Getting the structure of a data frame.
+
+str(dataframe)
+
+e.g.
+
+print(str(student))
+
+
+
+* Displaying the Summary of the DataFrame
+
+summary(dataframe)
+
+e.g.
+
+print(summary(dataframe))
+
+
+
+* Displaying Dataframe Data
+
+
+print(student[2,])			#Print the Second Row
+print(student[2:3,])
+print(student[2:3, 2:3])
+print(student[, 2:3])
+
+
+* Displaying Selected Columns
+
+namefeesdf=data.frame(student$name,student$fees)
+
+print(namefeesdf)
+
+
+
+* Add New Column in the Data Frame
+
+student$duration = c(3,3,4,3,4)
+print(student)
+
+
+* Add New Row in the Data Frame
+newStudent = data.frame(
+	'id'=6,
+	'name'='Rahul',
+	'course'='.Net',
+	'fees'=20000,
+	'doa'='2019-11-10'
+	'duration'=5
+)
+
+student=rbind(student,newStudent)
+
+
+* Merging Vectors into Dataframes
+
+s2015=c(1254,6565,3467)
+s2016=c(5457,3457,5468)
+s2017=c(6546,5467,5464)
+
+sales=cbind(s2015,s2016,s2017)
+
+print(sales)
+
+newsales=data.frame(
+	's2018'=c(6543,6753,3457),
+	's2019'=c(6456,7567,5678)
+)
+
+allsalesdata=cbind(sales,newsales)
+

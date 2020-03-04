@@ -1,0 +1,92 @@
+R Vectors
+
+Vectors are the most basic R data objects.
+A vector can be atomic or it can contain multiple elements.
+
+
+Note: All primitive types in R are defined as atomic vectors.
+
+
+#Atomic Vectors
+a=("abc")				#Character vector
+a=(1.5)					#Number vector
+a=(1)					#Integer vector
+a=(TRUE)				#Logical vector
+a=(2+3i)				#Complex Vector
+a=charToRaw('hello')	#Raw Vector
+
+
+#Multiple Elements Vectors
+a=1:5
+a=1.5:9.5
+a=1.2:10
+
+#Creating vectors using sequence operator
+a=seq(1,10, by=0.5)
+
+#Creating vectors using combine function
+a=c(1,2,3,4,5)
+
+
+#Accessing Vector Elements
+
+a=c("Sun","Mon","Tue","Wed","Thu","Fri","Sat")
+
+print(a[3])			#Tue
+print(a[-3])		#Thu
+
+print(a[c(1,3,5)])	#Sun,Tue,Thu
+print(a[c(-2,-5)])	#Fri,Tue
+print(a[1:4])		#Sun,Mon,Tue,Wed
+
+#Inserting an Element in a Vector
+a=c(11,22,33)
+a=c(a,44)
+
+#Iterating Vectors
+for(value in a)
+{
+	print(value)
+}
+
+
+i=1
+while(i<=4)
+{
+	print(a[i])
+	i=i+1	
+}
+
+
+1. Write a program to print all elements greater than or equals to 50.
+
+data=c(55,33,77,11,22,99,44)
+
+
+
+
+Vector Arithmetic
+
+v1=1:5
+v2=6:10
+
+print(v1+v2)		#Add
+print(v2-v1)		#Subtract
+print(v1*v2)		#Multiply
+print(v2/v1)		#Division
+
+
+Vector Recycling
+
+v1=1:6			
+v2=1:2		
+
+print(v1+v2)		#(2,4,4,6,6,8)
+
+
+
+#Sorting Vectors
+v=c(8,1,9,4,2,7,6)
+
+s1=sort(v)			
+s2=sort(v, decreasing=TRUE)

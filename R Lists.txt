@@ -1,0 +1,55 @@
+R Lists
+
+Lists are the R objects which contain certain elements of different types like - numbers, strings, vectors and another list inside it. A list can also contain a matrix or a function as its elements. List is created using list() function.
+
+Syntax:
+
+lst=list(value1,value2,value3)
+
+
+e.g.
+
+lst=list(1,2,3,4,5)
+
+
+
+Giving Names to R Lists
+
+student=list("Girish Attri","Python",45000)
+names(student) = c('name','course','fees')
+
+
+print(student[2])
+print(student$course)
+
+
+
+Manipulating List Elements
+
+lst=list()
+
+#Adding New Element
+lst[0]=1
+lst[1]=2
+lst[2]=3
+
+
+#Deleting Elements from a List
+
+lst[2]=NULL
+
+Assinment : Write a program to accept 5 elements in a list.
+
+
+
+Converting List to Vectors
+
+lstA=list(1,2,3,4,5)
+lstB=list(6,7,8,9,10)
+
+v1=unlist(lstA)
+v2=unlist(lstB)
+
+v3=v1+v2
+
+lstResult=list(v3)

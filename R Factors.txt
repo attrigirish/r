@@ -1,0 +1,15 @@
+Factors are the data objects which are used to categorize the data and store it as levels. They can store both strings and integers. They are useful in the columns which have a limited number of unique values. They are useful in data analysis and statistical modelling.
+
+Factors can be created by using following function:
+
+factor(data)
+
+
+E.g.
+
+
+data=c("Anil","Sunil","Pankaj","Anil","Anil","Sunil","Pankaj","Ravi")
+fdata=factor(data)
+print(fdata)
+
+

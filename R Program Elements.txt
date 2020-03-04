@@ -1,0 +1,186 @@
+R Program Elements
+
+1. Data Types
+
+A data type tells the run time engine the type of the information the variable holds. A data type determines the operation which could be performed on the given operands.
+
+
+1. R Data Types
+
+- Primitive Types
+
+1. Integer			32, 54, 34
+2. Number 			34.65, 34.65, 0.2
+3. Boolean 			TRUE / FALSE
+4. Character 		'5 Kapil Vihar', "5 Kapil Vihar"
+5. NULL
+
+
+- Non Primitive Types
+
+1. Vectors
+2. Matrices
+3. Lists
+4. Arrays
+
+
+
+2. R Variables
+
+A variable is a data store which is used to store program data in the memory.
+
+Syntax:
+
+<var-name> = <value>
+
+e.g.
+
+a=5				Integer
+b=5.5 			Number
+c='Shreyansh'	Character/String
+d="Shreyansh"	Character/String
+e=TRUE			Boolean
+g=NULL 			NULL
+
+
+
+3. R Operators
+
+An operator is a symbol which is used to tell the runtime engine to perform a specific operation.
+
+
+A. Arithmetic Operators
+
++ 			5+5 			10
+-			5-2				3
+/			5/2				2.5
+*			5*2 			10
+%%			5%%3			2
+**			5**3			125
+
+
+B. Relational Operators
+
+> 			5>2				TRUE
+<			5<2 			FALSE
+>=			5>=2			TRUE
+<=			5<=2 			FALSE
+==			5==5			TRUE
+!=			5!=5			FALSE
+
+
+C. Logical Operators
+
+&	(Logical AND)
+| 	(Logical OR)
+! 	(Logical NOT)
+
+
+Logical AND (&) yeilds a TRUE value if the values of all the expressions are TRUE.
+
+Logical OR (|) yields a TRUE value if the value of any of the expression is TRUE.
+
+Logical NOT (!) yields the opposite of the given value.
+
+
+Scenario:
+
+You are provided with payment mode and the payment amount. Write an R expression to check if a customer is eligible for discount. A discount will be given to the customer if the payment mode is 'CC' and the payment amount is greater than 5000.
+
+amount=7000
+mode='DC'
+
+result=mode=='CC' & amount>5000
+
+
+
+
+Scenario:
+
+You are provided with payment mode and the payment amount. Write an R expression to check if a customer is eligible for discount. A discount will be given to the customer if the payment mode is 'CC' or 'DC' and the Issuer bank is 'ICICI' and the payment amount is greater than 5000.
+
+
+issuer='HDFC'
+mode='CC'
+amount=10000
+
+result=mode=='CC' | mode=='DC' & issuer=='ICICI' & amount>5000
+
+
+
+Assignment Operators
+
+A. =
+B. <-
+C. ->
+
+
+a=5 		
+a<-5	
+5->a
+
+
+
+
+4. Input/Output Functions
+
+A. readline(prompt="") 
+
+Takes input from the user.
+
+name=readline("Enter Your Name : ")
+address=readline("Enter Your Address : ")
+age=as.integer(readline("Enter Age : "))
+amount=as.numeric(readline("Enter Amount : "))
+
+
+B. print(value) 
+
+Displays the value to the user.
+
+print("Hello")
+print("Hello Shreyansh")
+print(name)
+
+
+
+
+Program : Write a program to read name from the user and display it on the screen.
+
+
+Program : Write an R program to read two numbers from the user and display sum of them.
+
+
+Program : Write an R program to create a currency converter. The program will read the amount from the user in Rupees and display the equivalent amount in Dollars
+
+$1 = Rs. 71.23
+
+
+
+Conditional Statements
+
+1. if..else
+
+Syntax:
+
+if(condition){
+	statement(s)
+} else {
+	statements
+}
+
+
+a=5
+
+if(a>0){
+	print("Positive")
+} else {
+	print("Negative")
+}
+
+
+
+
+ Write a program to calculate the total expenses. Quantity and price per item are input by the user and discount of 10% is offered if the expense is more than 5000. solution
+
+ Write a program to determine whether the seller has made profit or incurred loss. Also determine how much profit he made or loss he incurred. Cost price and selling price of an item is input by the user

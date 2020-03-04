@@ -1,0 +1,30 @@
+Matrices
+
+Matrices are the R objects in which the elements are arranged in a two-dimensional rectangular layout. They contain elements of the same atomic types. Though we can create a matrix containing only characters or only logical values, they are not of much use. We use matrices containing numeric elements to be used in a mathematical calculatons.
+
+Syntax:
+
+matrix(data, nrow=value, ncol=value, byrow=TRUE, dimnames=value)
+
+e.g.
+
+
+mat=matrix(1:6, nrow=2, ncol=3)		
+
+#Output
+1 2 3
+4 5 6
+
+
+matrix(1:6, nrow=2, ncol=3, byrow=FALSE)
+
+1 3 5
+2 4 6
+
+
+
+Accessing Matrix Elements
+
+print(mat[1,2])				#2
+print(mat[1,])				#[1 2 3]
+print(mat[,2])				#[2 5]
